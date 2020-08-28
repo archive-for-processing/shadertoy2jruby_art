@@ -1,6 +1,6 @@
 # Site settings
 port: 4000
-title: shadertoy2jruby_art gem
+title: Shadertoy to JrubyArt
 email: mamba2928@yahoo.co.uk
 description: > # this means to ignore newlines until "baseurl:"
   The shadertoy2jruby_art provides default templates for PiCrate and JRubyArt sketches for shadertoy sketches

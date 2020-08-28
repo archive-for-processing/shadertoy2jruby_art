@@ -12,7 +12,8 @@ layout: default
   <h1 class="page-heading">Articles</h1>
    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
   <ul class="post-list">
-    {% for post in site.posts %}
+    {% for post in site.posts
+       %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
