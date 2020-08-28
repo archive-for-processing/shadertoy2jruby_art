@@ -1,0 +1,29 @@
+# Site settings
+port: 4000
+title: shadertoy2jruby_art gem
+email: mamba2928@yahoo.co.uk
+description: > # this means to ignore newlines until "baseurl:"
+  The shadertoy2jruby_art provides default templates for PiCrate and JRubyArt sketches for shadertoy sketches
+baseurl: "" # the subpath of your site, e.g. /blog
+regenerate: true
+url: "https://monkstone.github.io/shadertoy2jruby_art"
+
+urls:
+  bugs: https://github.com/monkstone/shadertoy2jruby_art/issues
+  github: https://github.com/monkstone/shadertoy2jruby_art/
+  wiki: https://github.com/monkstone/shadertoy2jruby_art/wiki
+twitter_username: monkstoneT
+github_username:  monkstone
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+
+syntax-highlighting:
+  enabled: true
+
+sass:
+  sass_dir: _sass
