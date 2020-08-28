@@ -1,9 +1,9 @@
 # Site settings
 port: 4000
-title: Shadertoy to JrubyArt
+title: Shadertoy to JRubyArt
 email: mamba2928@yahoo.co.uk
 description: > # this means to ignore newlines until "baseurl:"
-  The shadertoy2jruby_art provides default templates for PiCrate and JRubyArt sketches for shadertoy sketches
+  Shadertoy to JRubyArt provides default templates for PiCrate and JRubyArt sketches for shadertoy sketches
 baseurl: "" # the subpath of your site, e.g. /blog
 regenerate: true
 url: "https://monkstone.github.io/shadertoy2jruby_art"
