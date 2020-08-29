@@ -33,7 +33,7 @@ def draw
   wrapper.set('iFrame', frame_count)
   # mouse pixel coords. xy: current (if MLB down), zw: click
   if mouse_pressed?
-    last_mouse_position.set(mouse_x.to_f, mouse_y.to_f)
+    @last_mouse_position = Vec2D.new(mouse_x.to_f, mouse_y.to_f)
     @mouse_click_state = 1.0
   else
     @mouse_click_state = 0.0
