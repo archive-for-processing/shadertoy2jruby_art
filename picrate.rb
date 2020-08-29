@@ -20,7 +20,7 @@ class WrappedShader < Processing::App
     @wrapper = load_shader(data_path('default_shader.glsl'))
     # Assume the dimension of the window will not change over time
     wrapper.set('iResolution', width.to_f, height.to_f, 0.0)
-    @last_mouse_position = Vec2D.new(mouse_x.to_f, mouse_y.to_f)
+    @last_mouse_position = Vec2D.new(mouse_x, mouse_y)
     @start = java.lang.System.current_time_millis
   end
 
@@ -36,7 +36,7 @@ class WrappedShader < Processing::App
     wrapper.set('iFrame', frame_count)
     # mouse pixel coords. xy: current (if MLB down), zw: click
     if mouse_pressed?
-      @last_mouse_position = Vec2D.new(mouse_x.to_f, mouse_y.to_f)
+      @last_mouse_position = Vec2D.new(mouse_x, mouse_y)
       @mouse_click_state = 1.0
     else
       @mouse_click_state = 0.0

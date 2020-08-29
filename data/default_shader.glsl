@@ -4,7 +4,7 @@ precision mediump int;
 #endif
 
 // ----------------------
-/  SHADERTOY UNIFORMS  -
+// SHADERTOY UNIFORMS  -
 // ----------------------
 
 uniform vec3      iResolution;           // viewport resolution (in pixels)
