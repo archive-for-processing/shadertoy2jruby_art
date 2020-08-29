@@ -1,5 +1,5 @@
 attr_reader :last_mouse_position, :mouse_click_state, :mouse_dragged
-attr_reader :previous_time, :wrapper
+attr_reader :previous_time, :wrapper, :start
 # uniform iChannelTime[4]         # channel playback time (in seconds)
 # uniform vec3  iChannelResolution[4] # channel resolution (in pixels)
 # uniform samplerXX iChannel0..3 # input channel. XX = 2D/Cube
@@ -18,11 +18,12 @@ def setup
   # Assume the dimension of the window will not change over time
   wrapper.set('iResolution', width.to_f, height.to_f, 0.0)
   @last_mouse_position = Vec2D.new(mouse_x.to_f, mouse_y.to_f)
+  @start = java.lang.System.current_time_millis
 end
 
 def draw
   # shader playback time (in seconds)
-  current_time = millis / 1000.0
+  current_time = (java.lang.System.current_time_millis - start) / 1000.0
   wrapper.set('iTime', current_time)
   # render time (in seconds)
   time_delta = current_time - previous_time
@@ -41,8 +42,8 @@ def draw
   # Set the date
   # Note that iDate.y and iDate.z contain month-1 and day-1 respectively,
   # while x does contain the year (see: https://www.shadertoy.com/view/ldKGRR)
-  now = Time.now
-  wrapper.set('iDate', now.year, now.month - 1, now.day - 1, now.to_i)
+  jdate = Time.now.to_java
+  wrapper.set('iDate', jdate.get_year + 1990, jdate.get_month - 1, jdate.get_date - 1, jdate.seconds)
   # This uniform is undocumented so I have no idea what the range is
   wrapper.set('iFrameRate', frame_rate)
   # Apply the specified shader to any geometry drawn from this point
